@@ -26,7 +26,7 @@ echo "----- Check: is ssh-agent started: -----"
 eval "$(ssh-agent -s)"
 
 # # 4. Add your SSH private key to the ssh-agent.
-echo "TYPE: YES"
+
 ssh-add "~/.ssh/$keyname"
 
 # # 5. Copy content of "~/.ssh/keyname.pub" til https://github.com/settings/keys
@@ -42,6 +42,7 @@ echo "When you have created the Ssh key on github."
 read -n 1 -r -s -p $'Press ENTER key to continue\n'
 
 # # 6. Authorize that your computer trusts Github.com, write verbatim:
+echo "-----TYPE: yes -----"
 ssh -T git@github.com -i "/home/$OsUsername/.ssh/$keyname"
 
 # # 7. Tell GitHub that it should use SSH instead of HTTP login / password
@@ -53,6 +54,15 @@ git config --global url.ssh://git@github.com/.insteadOf https://github.com/
 #  HostName github.com
 #  IdentityFile ~/.ssh/github_martin_privat
 #  User git
+
+
+
+FILE="~/.ssh/config"
+if [ -f "$FILE" ]; then
+    echo "$FILE exists."
+else 
+    touch "~/.ssh/config"
+fi
 
 echo "" >> "~/.ssh/config"
 echo "host github.com" >> "~/.ssh/config"
