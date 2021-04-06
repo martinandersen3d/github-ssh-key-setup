@@ -32,8 +32,19 @@ keyfullpath="/home/$OsUsername/.ssh/$keyname"
 ssh-add "$keyfullpath"
 
 # # 5. Copy content of "~/.ssh/keyname.pub" til https://github.com/settings/keys
+echo "TWO OPTIONS: --------------------------"
+echo "Now you need to add the keys below in github. There are two ways to add them:"
+echo "A: To a profile - The computer can access ALL you repositories."
+echo "B: To a repositorie - The computer can access ONLY the repositories, where you add the keys.."
+echo ""
+echo "OPTION A:"
 echo "----- 1. Go to site: https://github.com/settings/keys -----"
 echo "----- 2. Click: New SSH key"
+echo "----- 3. Copy the text below to the 'Key' field. Then click Add Ssh Key"
+echo ""
+echo "OPTION B:"
+echo "----- 1. Go to repository: https://github.com/username/repo-name"
+echo "----- 2. Go to repository > Settings > Deploy Key > Add Deploy Key"
 echo "----- 3. Copy the text below to the 'Key' field. Then click Add Ssh Key"
 echo ""
 cat "/home/$OsUsername/.ssh/$keyname.pub"
@@ -81,3 +92,7 @@ git config --global user.name "$fullname"
 git config --global user.email "$githubemail"
 
 echo "----- DONE -----"
+
+
+# Links:
+# https://dev.to/koddr/quick-how-to-clone-your-private-repository-from-github-to-server-droplet-vds-etc-39jm
