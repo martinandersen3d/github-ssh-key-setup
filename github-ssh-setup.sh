@@ -61,7 +61,7 @@ FILE="~/.ssh/config"
 if [ -f "$FILE" ]; then
     echo "$FILE exists."
 else 
-    touch "~/.ssh/config"
+    touch ~/.ssh/config
 fi
 
 echo "" >> "~/.ssh/config"
