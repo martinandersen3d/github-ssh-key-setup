@@ -62,13 +62,14 @@ if [ -f "$FILE" ]; then
     echo "$FILE exists."
 else 
     touch ~/.ssh/config
+    sleep 0.5
 fi
 
-echo "" >> "~/.ssh/config"
-echo "host github.com" >> "~/.ssh/config"
-echo " HostName github.com" >> "~/.ssh/config"
-echo " IdentityFile ~/.ssh/$keyname" >> "~/.ssh/config"
-echo " User git" >> "~/.ssh/config"
+echo "" >> ~/.ssh/config
+echo "host github.com" >> ~/.ssh/config
+echo " HostName github.com" >> ~/.ssh/config
+echo " IdentityFile ~/.ssh/$keyname" >> ~/.ssh/config
+echo " User git" >> ~/.ssh/config
  
 ## 9. Put the correct rights to the file "~/.ssh/Config"
 chmod 600 ~/.ssh/config
