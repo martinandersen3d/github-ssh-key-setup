@@ -12,3 +12,5 @@ cd github-ssh-key-setup/
 
 ## 3. Add Keys on:
 https://github.com/settings/keys 
+
+:-)
