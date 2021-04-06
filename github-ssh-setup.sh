@@ -27,7 +27,9 @@ eval "$(ssh-agent -s)"
 
 # # 4. Add your SSH private key to the ssh-agent.
 
-ssh-add "~/.ssh/$keyname"
+sleep 0.5
+keyfullpath="/home/$OsUsername/.ssh/$keyname"
+ssh-add "$keyfullpath"
 
 # # 5. Copy content of "~/.ssh/keyname.pub" til https://github.com/settings/keys
 echo "----- 1. Go to site: https://github.com/settings/keys -----"
