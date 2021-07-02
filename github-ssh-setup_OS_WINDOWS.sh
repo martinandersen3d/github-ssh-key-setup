@@ -1,6 +1,12 @@
 #!/bin/bash
 LANG=en_US.UTF-8
 
+# Github SSH Key setup for Microsoft WINDOWS 10 and above 
+# I reccomend that you:
+# 1. download: https://git-scm.com/downloads
+# 2. Run the "git Bash" from: Start menu > Git > Git Bash
+
+
 # githubemail="USER INPUT"
 read -p "Enter your Github email (example: john@doe.com): " githubemail
 
