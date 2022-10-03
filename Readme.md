@@ -1,4 +1,4 @@
-# Quick Setup of SSH Keys for Github
+# Quick Setup of SSH Keys for Github And Azure
 
 ## 1. Clone this project
 ```
@@ -30,4 +30,13 @@ Use this option if your have a server, that needs access to ONE or more private/
 
 ## Demonstration
 ![alt](demo.gif)
+
+# Now works with Azure Devops
+
+Todo:
+- Currently it overwrites the file in c:\users\\$USER\.ssh\config, if you have any data there, make a backup before you run the script
+- Replace all github descriptions with Azure Devops descriptions
+
+## Demonstration - Azure
+![alt](azure.gif)
 
