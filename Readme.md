@@ -1,5 +1,11 @@
 # Quick Setup of SSH Keys for Github And Azure
 
+# Github SSH Setup:
+
+This sccript is in two versions:
+- **Linux:** github-ssh-setup.sh
+- **Windows+Git Bash:** github-ssh-setup_OS_WINDOWS.sh
+
 ## 1. Clone this project
 ```
 git clone https://github.com/martinandersen3d/github-ssh-key-setup.git
@@ -31,7 +37,7 @@ Use this option if your have a server, that needs access to ONE or more private/
 ## Demonstration
 ![alt](demo.gif)
 
-# Now works with Azure Devops
+# Azure Devops SSH Setup:
 
 Todo:
 - Currently it overwrites the file in c:\users\\$USER\\.ssh\config, if you have any data there, make a backup before you run the script
@@ -39,4 +45,23 @@ Todo:
 
 ## Demonstration - Azure
 ![alt](azure.gif)
+
+Example of config file:
+C:\Users\MyUsername\.ssh\config
+```
+Host ssh.dev.azure.com
+   PubkeyAcceptedKeyTypes=ssh-rsa
+   HostName ssh.dev.azure.com
+   IdentityFile C:\Users\MyUsername\.ssh\azure_rsa
+   IdentitiesOnly yes
+   AddKeysToAgent yes
+   PasswordAuthentication=no
+   User git
+
+Host vs-ssh.visualstudio.com
+  IdentityFile C:\Users\MyUsername\.ssh\azure_rsa
+  IdentitiesOnly yes
+```
+
+
 
