@@ -46,6 +46,8 @@ Todo:
 ## Demonstration - Azure
 ![alt](azure.gif)
 
+Note: For some stupid reason Microsoft needs TWO domains to make the SSH work for Azure, and not one domain like everyone else.
+
 Example of config file:
 C:\Users\MyUsername\.ssh\config
 ```
