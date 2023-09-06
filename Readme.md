@@ -65,5 +65,37 @@ Host vs-ssh.visualstudio.com
   IdentitiesOnly yes
 ```
 
+# Important Note on using Multiple Deploy keys in eg. github
+You should have a config file in:
+Windows:
+```
+C:\Users\<username>\.ssh\config
+```
+Linux:
+```
+~/.ssh/config
+```
+
+If you have mulitple repos from github you want to add Deploy keys to, you might need to edit the config file, like this:
+Windows example:
+```
+host github_superman
+ HostName github.com
+ IdentityFile C:/Users/username/.ssh/github_superman_id_rsa
+ User git
+
+host github_catwoman
+ HostName github.com
+ IdentityFile C:/Users/username/.ssh/github_catwoman_id_rsa
+ User git
+```
+
+And your `git clone`, command will need to be changed:
+
+```
+git clone git@github_superman:githubusername/repo.git
+git clone git@github_catwoman:githubusername/repo.git
+```
+
 
 
