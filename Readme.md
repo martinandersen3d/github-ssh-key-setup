@@ -98,4 +98,21 @@ git clone git@github_catwoman:githubusername/repo.git
 ```
 
 
+----
+
+# TODO: Notes: Azure devops
+
+https://stackoverflow.com/questions/61130895/unable-to-clone-azure-devops-repository-via-ssh-password-required
+
+2025: Tror der er lavet nogle ændringer, den her konfigi virker
+C:\Users\<user>\.ssh\config
+```
+Host ssh.dev.azure.com
+   PubkeyAcceptedKeyTypes=ssh-rsa
+   HostName ssh.dev.azure.com
+   IdentityFile C:\Users\mmmb\.ssh\id_rsa
+   User git
+
+```
+
 
